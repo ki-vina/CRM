@@ -18,12 +18,12 @@ type LogoProps = {
 };
 
 const StyledContainer = styled.div`
-  height: ${themeCssVariables.spacing[12]};
-  margin-bottom: ${themeCssVariables.spacing[4]};
+  height: calc(${themeCssVariables.spacing[12]} * 2);
+  margin-bottom: ${themeCssVariables.spacing[6]};
   margin-top: ${themeCssVariables.spacing[4]};
 
   position: relative;
-  width: ${themeCssVariables.spacing[12]};
+  width: calc(${themeCssVariables.spacing[12]} * 2);
 `;
 
 const StyledSecondaryLogo = styled.img`
