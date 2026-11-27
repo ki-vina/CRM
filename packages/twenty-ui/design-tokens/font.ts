@@ -9,7 +9,7 @@ export const FONT_TOKENS = {
     light: GRAY_SCALE_TOKENS.gray8,
     extraLight: GRAY_SCALE_TOKENS.gray7,
     inverted: GRAY_SCALE_TOKENS.gray1,
-    onAccent: token('color(display-p3 1 1 1)'),
+    onAccent: token('#05090f'),
     danger: COLOR_TOKENS.red,
   },
   size: {
