@@ -1,4 +1,4 @@
-# twenty-vkx: bản fork Twenty theo giao diện VKX
+# CRM (ki-vina/CRM): bản fork Twenty theo giao diện VKX
 
 Fork của [twentyhq/twenty](https://github.com/twentyhq/twenty) (AGPL-3.0, xem `LICENSE`). Đây là bản fork,
 không phải sản phẩm chính thức của Twenty. Nhánh làm việc: `kivina/vkx-ui`, tách từ tag `twenty/v2.64.1`.
