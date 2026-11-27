@@ -1,23 +1,23 @@
-import { fromNavigator, fromStorage, fromUrl } from '@lingui/detect-locale';
+import { fromStorage, fromUrl } from '@lingui/detect-locale';
 import { APP_LOCALES } from 'twenty-shared/translations';
 import { isDefined, isValidLocale, normalizeLocale } from 'twenty-shared/utils';
 import { dynamicActivate } from '~/utils/i18n/dynamicActivate';
 
+// Bản fork Kivina: mặc định tiếng Việt khi người dùng chưa chọn ngôn ngữ
+// (không theo ngôn ngữ trình duyệt). Ưu tiên: ?locale= > lựa chọn đã lưu > vi-VN.
+const DEFAULT_LOCALE: keyof typeof APP_LOCALES = APP_LOCALES['vi-VN'];
+
 export const initialI18nActivate = () => {
   const urlLocale = fromUrl('locale');
   const storageLocale = fromStorage('locale');
-  const navigatorLocale = fromNavigator();
 
-  let locale: keyof typeof APP_LOCALES = APP_LOCALES.en;
+  let locale: keyof typeof APP_LOCALES = DEFAULT_LOCALE;
 
   const normalizedUrlLocale = isDefined(urlLocale)
     ? normalizeLocale(urlLocale)
     : null;
   const normalizedStorageLocale = isDefined(storageLocale)
     ? normalizeLocale(storageLocale)
-    : null;
-  const normalizedNavigatorLocale = isDefined(navigatorLocale)
-    ? normalizeLocale(navigatorLocale)
     : null;
 
   if (isDefined(normalizedUrlLocale) && isValidLocale(normalizedUrlLocale)) {
@@ -33,11 +33,6 @@ export const initialI18nActivate = () => {
     isValidLocale(normalizedStorageLocale)
   ) {
     locale = normalizedStorageLocale;
-  } else if (
-    isDefined(normalizedNavigatorLocale) &&
-    isValidLocale(normalizedNavigatorLocale)
-  ) {
-    locale = normalizedNavigatorLocale;
   }
 
   dynamicActivate(locale);
