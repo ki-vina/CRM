@@ -18,6 +18,7 @@ không phải sản phẩm chính thức của Twenty. Nhánh làm việc: `kivi
 ```
 corepack-free: node .yarn/releases/yarn-4.18.1.cjs workspaces focus twenty-monorepo twenty-front twenty-front-component-renderer twenty-ui twenty-shared twenty-sdk twenty-client-sdk
 npx tsx packages/twenty-ui/scripts/generateThemeTokens.ts --check
+(cd packages/twenty-front && npx lingui compile --typescript)   # BẮT BUỘC sau khi sửa file .po
 npx nx build twenty-front          # cần `yarn` trong PATH
 ```
 Image: `packages/twenty-docker/twenty/Dockerfile` (build bằng docker trên máy build, tag riêng, vd `kivina-twenty:vkx-<ngày>`).
