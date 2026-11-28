@@ -13270,7 +13270,7 @@ msgstr "Phần thân phản hồi mong đợi"
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 msgid "Experience"
-msgstr "Kinh nghiệm"
+msgstr "Trải nghiệm"
 
 #. js-lingui-id: 8TiwZn
 #: src/utils/title-utils.ts
